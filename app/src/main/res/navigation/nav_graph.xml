@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.financialtracker.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_navigation_dashboard_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_editTransactionFragment"
+            app:destination="@id/editTransactionFragment">
+            <argument
+                android:name="transaction"
+                app:argType="com.example.financialtracker.data.Transaction" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_budget"
+        android:name="com.example.financialtracker.ui.budget.BudgetFragment"
+        android:label="Budget"
+        tools:layout="@layout/fragment_budget">
+        <action
+            android:id="@+id/action_budgetFragment_to_passcodeFragment"
+            app:destination="@id/passcodeActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.financialtracker.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <activity
+        android:id="@+id/passcodeActivity"
+        android:name="com.example.financialtracker.ui.passcode.PasscodeActivity"
+        android:label="Passcode" />
+
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.example.financialtracker.ui.transaction.AddTransactionFragment"
+        android:label="Add Transaction"
+        tools:layout="@layout/fragment_add_transaction" />
+
+    <fragment
+        android:id="@+id/editTransactionFragment"
+        android:name="com.example.financialtracker.ui.transaction.EditTransactionFragment"
+        android:label="Edit Transaction"
+        tools:layout="@layout/fragment_edit_transaction">
+        <argument
+            android:name="transaction"
+            app:argType="com.example.financialtracker.data.Transaction" />
+    </fragment>
+</navigation>

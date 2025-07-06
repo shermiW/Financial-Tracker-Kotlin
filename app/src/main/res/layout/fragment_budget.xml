@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Monthly Budget Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_monthly_budget"
+                    android:textColor="#757575"
+                    android:textSize="14sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.1"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/hint_amount"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMonthlyBudget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveBudget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/btn_save"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Budget Progress Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Budget Progress"
+                    android:textColor="#757575"
+                    android:textSize="14sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.1"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvBudgetAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"/>
+
+                    <TextView
+                        android:id="@+id/tvBudgetStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#757575"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progressBudget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:trackCornerRadius="4dp"
+                    app:trackThickness="8dp"
+                    app:indicatorColor="#4CAF50"
+                    app:trackColor="#E0E0E0"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Spent"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.1"/>
+
+                        <TextView
+                            android:id="@+id/tvSpentAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#F44336"
+                            android:fontFamily="sans-serif"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Remaining"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.1"/>
+
+                        <TextView
+                            android:id="@+id/tvRemainingAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#4CAF50"
+                            android:fontFamily="sans-serif"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Logout Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Logout"
+            android:textColor="@android:color/white"
+            app:cornerRadius="8dp"
+            app:backgroundTint="#F44336"/>
+
+    </LinearLayout>
+</ScrollView>
